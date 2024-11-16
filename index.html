@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RosalesHD</title>
+    <style>
+       body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .iframe-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .welcome-message {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(0, 255, 0);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to RosalesHD</h1>
+        <input type="password" id="accessCode" placeholder="Enter Access Code">
+        <button onclick="checkCode()">Submit</button>
+        <div class="welcome-message" id="welcomeMessage"></div>
+        <div class="iframe-container" id="iframeContainer">
+      <iframe loading="lazy" class="responsive" allow="encrypted-media" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowfullscreen="no" src="https://embedme.top/embed/admin/admin-jake-paul-vs-mike-tyson/1" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+        </div> 
+        </div>
+    <script>
+        function checkCode() {
+            const code = document.getElementById('accessCode').value;
+            const iframeContainer = document.getElementById('iframeContainer');
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            if (code === 'admin') {
+                iframeContainer.style.display = 'block';
+                welcomeMessage.style.display = 'block';
+                document.getElementById('accessCode').style.display = 'none';
+                document.querySelector('button').style.display = 'none';
+            } else {
+                alert('Incorrect code. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
