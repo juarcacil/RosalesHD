@@ -1,81 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RosalesHD</title>
-    <style>
-       body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        input[type="password"] {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .iframe-container {
-            display: none;
-            margin-top: 20px;
-        }
-        .welcome-message {
-            font-size: 24px;
-            font-weight: bold;
-            color: rgb(0, 255, 0);
-            display: none;
-        }
-    </style>
+<title>Mike Tyson vs Jake Paul</title>
+<style>
+body {
+  background: linear-gradient(to right, #000000, #001);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  color: #eee; 
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+              0px 8px 13px rgba(0,0,0,0.1),
+              0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px; /* Space between buttons and iframe */
+}
+
+button {
+  background-color: #d9534f;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+button:hover {
+  background-color: #c9302c;
+}
+
+.greeting {
+  font-size: 2em;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  animation: color-change 5s infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes color-change {
+  0% { color: red; }
+  14% { color: orange; }
+  28% { color: yellow; }
+  42% { color: green; }
+  57% { color: blue; }
+  71% { color: indigo; }
+  85% { color: violet; }
+  100% { color: red; }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to RosalesHD</h1>
-        <input type="password" id="accessCode" placeholder="Enter Access Code">
-        <button onclick="checkCode()">Submit</button>
-        <div class="welcome-message" id="welcomeMessage"></div>
-        <div class="iframe-container" id="iframeContainer">
-      <iframe loading="lazy" class="responsive" allow="encrypted-media" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowfullscreen="no" src="https://embedme.top/embed/admin/admin-jake-paul-vs-mike-tyson/1" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
-        </div> 
-        </div>
-    <script>
-        function checkCode() {
-            const code = document.getElementById('accessCode').value;
-            const iframeContainer = document.getElementById('iframeContainer');
-            const welcomeMessage = document.getElementById('welcomeMessage');
-            if (code === 'admin') {
-                iframeContainer.style.display = 'block';
-                welcomeMessage.style.display = 'block';
-                document.getElementById('accessCode').style.display = 'none';
-                document.querySelector('button').style.display = 'none';
-            } else {
-                alert('Incorrect code. Please try again.');
-            }
-        }
-    </script>
+
+<div class="greeting">Hi Rogelio!</div>
+
+<div class="button-container"> 
+  <button onclick="showIframe('link1')">Link 1</button>
+  <button onclick="showIframe('link2')">Link 2</button>
+</div>
+
+<h1>Mike Tyson Vs Jake Paul</h1>
+
+<div class="container">
+  <div class="iframe-container" id="iframe-container">
+    <iframe loading="lazy" class="responsive" allow="encrypted-media" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowfullscreen="no" src="https://embedme.top/embed/alpha/jake-paul-vs-mike-tyson/4" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+  </div>
+</div>
+
+<script>
+function showIframe(link) {
+  var iframeContainer = document.getElementById('iframe-container');
+  if (link === 'link1') {
+    iframeContainer.innerHTML = '<iframe loading="lazy" class="responsive" allow="encrypted-media" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowfullscreen="no" src="https://embedme.top/embed/alpha/jake-paul-vs-mike-tyson/4" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>';
+  } else if (link === 'link2') {
+    iframeContainer.innerHTML = '<iframe loading="lazy" class="responsive" allow="encrypted-media" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowfullscreen="no" src="https://embedme.top/embed/admin/admin-jake-paul-vs-mike-tyson/1" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>';
+  }
+}
+</script>
+
 </body>
 </html>
